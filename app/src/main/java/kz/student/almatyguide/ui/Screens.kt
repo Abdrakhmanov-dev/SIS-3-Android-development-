@@ -56,8 +56,8 @@ fun DetailScreen(place: Place?, favorite: Boolean, onToggle: () -> Unit, onBack:
      Text(place.subtitle, style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
     } }
     item { LazyRow(horizontalArrangement = Arrangement.spacedBy(Spacing.sm)) {
-     item { TagChip(place.category, true, {}) }
-     item { TagChip("Алматы", false, {}) }
+     item { TagChip(place.category, true, null) }
+     item { TagChip("Алматы", false, null) }
     } }
     item { SectionHeader("История места", "Идея для следующего выходного") }
     item { Text(place.description, style = MaterialTheme.typography.bodyLarge) }

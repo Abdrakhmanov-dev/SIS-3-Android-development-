@@ -39,8 +39,14 @@ fun SectionHeader(title: String, subtitle: String, modifier: Modifier = Modifier
  }
 }
 @Composable
-fun TagChip(label: String, selected: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier) {
- FilterChip(selected = selected, onClick = onClick, modifier = modifier.heightIn(min = Spacing.touch),
+fun TagChip(label: String, selected: Boolean, onClick: (() -> Unit)?, modifier: Modifier = Modifier) {
+ if (onClick == null) {
+  Surface(modifier = modifier.heightIn(min = Spacing.touch), shape = RoundedCornerShape(Spacing.sm), color = if (selected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant) {
+   Box(Modifier.padding(horizontal = Spacing.md, vertical = Spacing.sm), contentAlignment = Alignment.Center) {
+    Text(label, style = MaterialTheme.typography.labelLarge, maxLines = 1, overflow = TextOverflow.Ellipsis)
+   }
+  }
+ } else FilterChip(selected = selected, onClick = onClick, modifier = modifier.heightIn(min = Spacing.touch),
   label = { Text(label, style = MaterialTheme.typography.labelLarge, maxLines = 1, overflow = TextOverflow.Ellipsis) })
 }
 @Composable
