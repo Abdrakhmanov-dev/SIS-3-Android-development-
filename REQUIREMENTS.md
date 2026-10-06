@@ -16,7 +16,7 @@
 | Тёмная тема | AlmatyTheme → isSystemInDarkTheme() |
 | Нажимаемые элементы >=48dp | IconButton.size(Spacing.touch); chips/buttons.heightIn(min=Spacing.touch) |
 | 3+ компонента, каждый переиспользован | PlaceCard: каталог/избранное; SectionHeader: все экраны; TagChip: каталог/подробности; также AppTopBar, ScenicImage, EmptyState |
-| Preview экранов и компонентов | 7 экранных и 7 компонентных превью, включая тёмные |
+| Preview экранов и компонентов | 8 экранных и 7 компонентных превью, включая тёмные |
 | Kotlin data class + list | data/Place.kt |
 | Navigation Compose | MainActivity: NavHost + composable |
 | ID как аргумент | detail/{id}, NavType.IntType → Places.find(id) |

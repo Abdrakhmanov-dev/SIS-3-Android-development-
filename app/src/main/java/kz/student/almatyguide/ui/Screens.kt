@@ -92,3 +92,5 @@ fun FavoritesScreen(places: List<Place>, favorites: Set<Int>, onOpen: (Int) -> U
 @Preview(showBackground = true) @Composable private fun ListDarkPreview() { AlmatyTheme(true) { ListScreen(Places.items, emptySet(), {}, {}, {}) } }
 @Preview(showBackground = true) @Composable private fun DetailDarkPreview() { AlmatyTheme(true) { DetailScreen(Places.items[0], true, {}, {}) } }
 @Preview(showBackground = true) @Composable private fun FavoritesDarkPreview() { AlmatyTheme(true) { FavoritesScreen(Places.items, setOf(1), {}, {}, {}) } }
+
+@Preview(showBackground = true) @Composable private fun EmptyListPreview() { AlmatyTheme { ListScreen(emptyList(), emptySet(), {}, {}, {}) } }

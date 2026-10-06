@@ -19,7 +19,7 @@ Gradle Wrapper включён, отдельная установка Gradle не
 - `ui/Screens.kt`: ListScreen, DetailScreen, FavoritesScreen и превью.
 - `ui/Components.kt`: 6 собственных компонентов с параметрами и превью.
 - `ui/theme/Theme.kt`: светлая/тёмная палитры, типографика, Spacing.
-- `app/src/main/res/drawable/mountains.png`: собственная иллюстрация, загружаемая через painterResource.
+- `app/src/main/res/drawable-nodpi/mountains.png`: собственная иллюстрация, загружаемая через painterResource.
 - `design/`: размеченные макеты, добавленные первым локальным коммитом.
 - `screenshots/`: реальные снимки приложения; статус проверки — в VALIDATION.md.
 - `DEFENSE.md`: краткая подготовка к защите.
