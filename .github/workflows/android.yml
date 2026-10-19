@@ -1,0 +1,57 @@
+name: Android build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Build APK, run lint, unit tests and render screenshots
+        run: |
+          chmod +x gradlew
+          set -o pipefail
+          ./gradlew --no-daemon :app:assembleDebug :app:lintDebug :app:recordRoborazziDebug 2>&1 | tee build.log
+      - name: Report build errors
+        if: failure()
+        run: |
+          # Turn Kotlin compiler errors, failed tests and Gradle's "What went wrong" into readable annotations.
+          grep -E '^e: |FAILED|AssertionError|Exception' build.log | head -8 | while IFS= read -r line; do echo "::error::$line"; done
+          msg=$(grep -A 25 'What went wrong' build.log | head -40 | sed ':a;N;$!ba;s/%/%25/g;s/\r//g;s/\n/%0A/g')
+          [ -n "$msg" ] && echo "::error title=Gradle::$msg"
+          find app/build/test-results -name '*.xml' -exec grep -l '<failure' {} + 2>/dev/null | sort -r | head -3 | while read f; do
+            echo "::error title=Test failure::$(grep -m1 -A 8 '<failure' "$f" | sed ':a;N;$!ba;s/%/%25/g;s/\n/%0A/g')"
+          done
+          true
+      - name: Copy screenshots for README
+        run: |
+          mkdir -p screenshots
+          cp app/build/outputs/roborazzi/*.png screenshots/
+          ls screenshots
+      - name: Commit screenshots if they changed
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add screenshots
+          git diff --cached --quiet || (git commit -m "Update screenshots rendered by Roborazzi [skip ci]" && git push)
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: RecipeBox-debug
+          path: |
+            app/build/outputs/apk/debug/*.apk
+            app/build/reports/
+            screenshots/
