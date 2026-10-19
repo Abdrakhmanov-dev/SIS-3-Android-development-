@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Own illustration: a steaming bowl on a warm background. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp" android:height="120dp"
+    android:viewportWidth="240" android:viewportHeight="120">
+    <path android:fillColor="#FFDBCB" android:pathData="M0,0h240v120h-240z"/>
+    <path android:fillColor="#F4C2A8" android:pathData="M0,92 C60,78 180,78 240,92 L240,120 L0,120 Z"/>
+    <path android:fillColor="#E2EDB9" android:pathData="M18,30 a14,14 0 1,0 28,0 a14,14 0 1,0 -28,0"/>
+    <path android:fillColor="#E2EDB9" android:pathData="M196,22 a10,10 0 1,0 20,0 a10,10 0 1,0 -20,0"/>
+    <path android:strokeColor="#9A4A24" android:strokeWidth="4" android:strokeLineCap="round" android:fillColor="#00000000"
+        android:pathData="M100,48 C92,38 108,30 100,18 M120,46 C112,34 128,26 120,12 M140,48 C132,38 148,30 140,18"/>
+    <path android:fillColor="#5E6B3A" android:pathData="M86,58 C96,50 110,56 120,54 C132,52 146,48 156,58 Z"/>
+    <path android:fillColor="#D9822B" android:pathData="M104,52 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0"/>
+    <path android:fillColor="#9A4A24" android:pathData="M70,58 L170,58 C168,88 146,102 120,102 C94,102 72,88 70,58 Z"/>
+    <path android:fillColor="#7A3410" android:pathData="M100,102 L140,102 L136,108 L104,108 Z"/>
+    <path android:fillColor="#FFFFFF" android:fillAlpha="0.25" android:pathData="M82,66 C86,84 98,92 110,95 C96,94 82,84 82,66 Z"/>
+</vector>
