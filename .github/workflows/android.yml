@@ -31,8 +31,8 @@ jobs:
           grep -E '^e: |FAILED|AssertionError|Exception' build.log | head -8 | while IFS= read -r line; do echo "::error::$line"; done
           msg=$(grep -A 25 'What went wrong' build.log | head -40 | sed ':a;N;$!ba;s/%/%25/g;s/\r//g;s/\n/%0A/g')
           [ -n "$msg" ] && echo "::error title=Gradle::$msg"
-          find app/build/test-results -name '*.xml' -exec grep -l '<failure' {} + 2>/dev/null | head -3 | while read f; do
-            echo "::error title=Test failure::$(grep -A 6 '<failure' "$f" | head -12 | sed ':a;N;$!ba;s/%/%25/g;s/\n/%0A/g')"
+          find app/build/test-results -name '*.xml' -exec grep -l '<failure' {} + 2>/dev/null | sort -r | head -3 | while read f; do
+            echo "::error title=Test failure::$(grep -m1 -A 8 '<failure' "$f" | sed ':a;N;$!ba;s/%/%25/g;s/\n/%0A/g')"
           done
           true
       - name: Copy screenshots for README
