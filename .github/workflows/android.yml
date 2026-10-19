@@ -23,7 +23,7 @@ jobs:
         run: |
           chmod +x gradlew
           set -o pipefail
-          ./gradlew --no-daemon :app:assembleDebug :app:lintDebug :app:recordPaparazziDebug 2>&1 | tee build.log
+          ./gradlew --no-daemon :app:assembleDebug :app:lintDebug :app:recordRoborazziDebug 2>&1 | tee build.log
       - name: Report build errors
         if: failure()
         run: |
@@ -38,10 +38,7 @@ jobs:
       - name: Copy screenshots for README
         run: |
           mkdir -p screenshots
-          for f in app/src/test/snapshots/images/*.png; do
-            name=$(basename "$f" .png); name=${name##*_}
-            cp "$f" "screenshots/$name.png"
-          done
+          cp app/build/outputs/roborazzi/*.png screenshots/
           ls screenshots
       - name: Commit screenshots if they changed
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -49,7 +46,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add screenshots
-          git diff --cached --quiet || (git commit -m "Update screenshots rendered by Paparazzi [skip ci]" && git push)
+          git diff --cached --quiet || (git commit -m "Update screenshots rendered by Roborazzi [skip ci]" && git push)
       - uses: actions/upload-artifact@v4
         if: always()
         with:

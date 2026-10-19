@@ -13,7 +13,7 @@
 Чтобы увидеть состояние ошибки, поставьте `SIMULATE_SERVER_ERROR = true` в `RecipeBoxApp.kt` и запустите приложение заново.
 
 ## Скриншоты
-Скриншоты рендерит [Paparazzi](https://github.com/cashapp/paparazzi) из настоящих composable-экранов (`ScreenshotTest.kt`) в GitHub Actions; они обновляются автоматически.
+Скриншоты рендерят Robolectric и [Roborazzi](https://github.com/takahirom/roborazzi) из настоящих composable-экранов (`ScreenshotTest.kt`) в GitHub Actions; они обновляются автоматически.
 
 | Экран | Светлая тема | Тёмная тема |
 |---|---|---|
