@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="860" viewBox="0 0 800 860" font-family="Arial, sans-serif">
+<rect width="100%" height="100%" fill="#fffdf9"/>
+<text x="20" y="30" font-size="20" font-weight="bold" fill="#222">Рецепт — разметка</text>
+<rect x="20" y="45" width="380" height="800" rx="28" fill="#ffffff" stroke="#222" stroke-width="3"/>
+<rect x="24" y="49" width="372" height="792" rx="6" fill="#7a7a7a" fill-opacity="0.06" stroke="#7a7a7a" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="27" y="52" width="66" height="16" rx="3" fill="#7a7a7a"/>
+<text x="32" y="64" font-size="11" font-weight="bold" fill="#fff">Scaffold</text>
+<text x="98" y="64" font-size="11" fill="#333">экран рецепта</text>
+<rect x="34" y="73" width="352" height="52" rx="6" fill="#9A4A24" fill-opacity="0.06" stroke="#9A4A24" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="37" y="76" width="73" height="16" rx="3" fill="#9A4A24"/>
+<text x="42" y="88" font-size="11" font-weight="bold" fill="#fff">TopAppBar</text>
+<text x="115" y="88" font-size="11" fill="#333">← назад, «Рецепт»</text>
+<rect x="34" y="133" width="352" height="700" rx="6" fill="#2E6BB0" fill-opacity="0.06" stroke="#2E6BB0" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="37" y="136" width="80" height="16" rx="3" fill="#2E6BB0"/>
+<text x="42" y="148" font-size="11" font-weight="bold" fill="#fff">LazyColumn</text>
+<rect x="44" y="157" width="332" height="170" rx="6" fill="#8E44AD" fill-opacity="0.06" stroke="#8E44AD" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="47" y="160" width="38" height="16" rx="3" fill="#8E44AD"/>
+<text x="52" y="172" font-size="11" font-weight="bold" fill="#fff">Card</text>
+<rect x="54" y="181" width="312" height="136" rx="6" fill="#16A085" fill-opacity="0.06" stroke="#16A085" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="57" y="184" width="45" height="16" rx="3" fill="#16A085"/>
+<text x="62" y="196" font-size="11" font-weight="bold" fill="#fff">Image</text>
+<text x="107" y="196" font-size="11" fill="#333">иллюстрация + contentDescription</text>
+<rect x="44" y="337" width="332" height="66" rx="6" fill="#D68910" fill-opacity="0.06" stroke="#D68910" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="47" y="340" width="52" height="16" rx="3" fill="#D68910"/>
+<text x="52" y="352" font-size="11" font-weight="bold" fill="#fff">Column</text>
+<rect x="54" y="359" width="312" height="18" rx="6" fill="#555555" fill-opacity="0.06" stroke="#555555" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="57" y="362" width="38" height="16" rx="3" fill="#555555"/>
+<text x="62" y="374" font-size="11" font-weight="bold" fill="#fff">Text</text>
+<text x="100" y="374" font-size="11" fill="#333">название (maxLines + многоточие)</text>
+<rect x="44" y="411" width="332" height="42" rx="6" fill="#2E8B57" fill-opacity="0.06" stroke="#2E8B57" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="47" y="414" width="59" height="16" rx="3" fill="#2E8B57"/>
+<text x="52" y="426" font-size="11" font-weight="bold" fill="#fff">LazyRow</text>
+<text x="111" y="426" font-size="11" fill="#333">бейджи: время, порции, сложность</text>
+<rect x="44" y="461" width="332" height="48" rx="6" fill="#555555" fill-opacity="0.06" stroke="#555555" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="47" y="464" width="38" height="16" rx="3" fill="#555555"/>
+<text x="52" y="476" font-size="11" font-weight="bold" fill="#fff">Text</text>
+<text x="90" y="476" font-size="11" fill="#333">описание</text>
+<rect x="44" y="517" width="332" height="40" rx="6" fill="#B03A2E" fill-opacity="0.06" stroke="#B03A2E" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="47" y="520" width="52" height="16" rx="3" fill="#B03A2E"/>
+<text x="52" y="532" font-size="11" font-weight="bold" fill="#fff">Button</text>
+<text x="104" y="532" font-size="11" fill="#333">«Ингредиенты (N)» раскрыть</text>
+<rect x="44" y="565" width="332" height="80" rx="6" fill="#D68910" fill-opacity="0.06" stroke="#D68910" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="47" y="568" width="52" height="16" rx="3" fill="#D68910"/>
+<text x="52" y="580" font-size="11" font-weight="bold" fill="#fff">Column</text>
+<text x="104" y="580" font-size="11" fill="#333">список ингредиентов (AnimatedVisibility)</text>
+<rect x="44" y="653" width="332" height="110" rx="6" fill="#D68910" fill-opacity="0.06" stroke="#D68910" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="47" y="656" width="52" height="16" rx="3" fill="#D68910"/>
+<text x="52" y="668" font-size="11" font-weight="bold" fill="#fff">Column</text>
+<text x="104" y="668" font-size="11" fill="#333">шаги приготовления</text>
+<rect x="54" y="677" width="312" height="24" rx="6" fill="#C0392B" fill-opacity="0.06" stroke="#C0392B" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="57" y="680" width="31" height="16" rx="3" fill="#C0392B"/>
+<text x="62" y="692" font-size="11" font-weight="bold" fill="#fff">Row</text>
+<text x="93" y="692" font-size="11" fill="#333">номер + текст шага</text>
+<rect x="44" y="775" width="332" height="46" rx="6" fill="#B03A2E" fill-opacity="0.06" stroke="#B03A2E" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="47" y="778" width="52" height="16" rx="3" fill="#B03A2E"/>
+<text x="52" y="790" font-size="11" font-weight="bold" fill="#fff">Button</text>
+<text x="104" y="790" font-size="11" fill="#333">Сохранить рецепт</text>
+<text x="430" y="70" font-size="15" font-weight="bold" fill="#222">Обозначения</text>
+<rect x="430" y="82" width="16" height="16" rx="3" fill="#7a7a7a"/><text x="454" y="95" font-size="13" fill="#333">Scaffold</text>
+<rect x="430" y="106" width="16" height="16" rx="3" fill="#9A4A24"/><text x="454" y="119" font-size="13" fill="#333">TopAppBar</text>
+<rect x="430" y="130" width="16" height="16" rx="3" fill="#2E6BB0"/><text x="454" y="143" font-size="13" fill="#333">LazyColumn</text>
+<rect x="430" y="154" width="16" height="16" rx="3" fill="#2E8B57"/><text x="454" y="167" font-size="13" fill="#333">LazyRow</text>
+<rect x="430" y="178" width="16" height="16" rx="3" fill="#8E44AD"/><text x="454" y="191" font-size="13" fill="#333">Card</text>
+<rect x="430" y="202" width="16" height="16" rx="3" fill="#C0392B"/><text x="454" y="215" font-size="13" fill="#333">Row</text>
+<rect x="430" y="226" width="16" height="16" rx="3" fill="#D68910"/><text x="454" y="239" font-size="13" fill="#333">Column</text>
+<rect x="430" y="250" width="16" height="16" rx="3" fill="#16A085"/><text x="454" y="263" font-size="13" fill="#333">Image</text>
+<rect x="430" y="274" width="16" height="16" rx="3" fill="#555555"/><text x="454" y="287" font-size="13" fill="#333">Text</text>
+<rect x="430" y="298" width="16" height="16" rx="3" fill="#34495E"/><text x="454" y="311" font-size="13" fill="#333">Box</text>
+<rect x="430" y="322" width="16" height="16" rx="3" fill="#9A4A24"/><text x="454" y="335" font-size="13" fill="#333">NavigationBar</text>
+<rect x="430" y="346" width="16" height="16" rx="3" fill="#B03A2E"/><text x="454" y="359" font-size="13" fill="#333">Button</text>
+<rect x="430" y="370" width="16" height="16" rx="3" fill="#2C3E50"/><text x="454" y="383" font-size="13" fill="#333">TextField</text>
+</svg>

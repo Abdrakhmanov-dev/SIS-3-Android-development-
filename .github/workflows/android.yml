@@ -1,0 +1,48 @@
+name: Android build
+
+on:
+  push:
+    branches: [main, recipebox-wip]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Build APK, run lint, unit tests and render screenshots
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon :app:assembleDebug :app:lintDebug :app:recordPaparazziDebug
+      - name: Copy screenshots for README
+        run: |
+          mkdir -p screenshots
+          for f in app/src/test/snapshots/images/*.png; do
+            name=$(basename "$f" .png); name=${name##*_}
+            cp "$f" "screenshots/$name.png"
+          done
+          ls screenshots
+      - name: Commit screenshots if they changed
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add screenshots
+          git diff --cached --quiet || (git commit -m "Update screenshots rendered by Paparazzi [skip ci]" && git push)
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: RecipeBox-debug
+          path: |
+            app/build/outputs/apk/debug/*.apk
+            app/build/reports/
+            screenshots/
