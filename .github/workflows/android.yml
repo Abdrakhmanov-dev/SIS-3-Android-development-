@@ -41,7 +41,7 @@ jobs:
           cp app/build/outputs/roborazzi/*.png screenshots/
           ls screenshots
       - name: Commit screenshots if they changed
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
